@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/ddd?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    port: 6379
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
