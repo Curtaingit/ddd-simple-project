@@ -19,29 +19,29 @@ import java.util.UUID;
 @Slf4j
 public class KafkaSender {
 
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
-
-    //发送消息方法
-    public void send(String msg) {
-        log.info("kafka send message = {}",msg);
-        kafkaTemplate.send("test", msg);
-    }
-
-    @KafkaListener(topics = {"test"})
-    public void listen(ConsumerRecord<?, ?> record) {
-
-        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
-
-        if (kafkaMessage.isPresent()) {
-
-            Object message = kafkaMessage.get();
-
-            log.info("kafka record =" + record);
-            log.info("kafka message =" + message);
-        }
-
-    }
+//    @Autowired
+//    private KafkaTemplate<String, String> kafkaTemplate;
+//
+//    //发送消息方法
+//    public void send(String msg) {
+//        log.info("kafka send message = {}",msg);
+//        kafkaTemplate.send("test", msg);
+//    }
+//
+//    @KafkaListener(topics = {"test"})
+//    public void listen(ConsumerRecord<?, ?> record) {
+//
+//        Optional<?> kafkaMessage = Optional.ofNullable(record.value());
+//
+//        if (kafkaMessage.isPresent()) {
+//
+//            Object message = kafkaMessage.get();
+//
+//            log.info("kafka record =" + record);
+//            log.info("kafka message =" + message);
+//        }
+//
+//    }
 
 
 }

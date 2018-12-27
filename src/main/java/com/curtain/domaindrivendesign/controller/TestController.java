@@ -9,6 +9,7 @@ import com.curtain.domaindrivendesign.service.SecKillServiceImpl;
 import com.curtain.domaindrivendesign.service.UserService;
 import com.curtain.domaindrivendesign.util.KafkaSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,6 +57,7 @@ public class TestController {
     }
 
     @RequestMapping("/query")
+    @Cacheable(value="users", key="#id")
     public Object query(@RequestParam("id") String id) {
         return secKillService.queryMap(id);
     }
@@ -66,9 +68,9 @@ public class TestController {
     }
 
 
-    @RequestMapping("/send")
-    public Object send() {
-        kafkaSender.send("hello kafka");
-        return "发送成功";
-    }
+//    @RequestMapping("/send")
+//    public Object send() {
+//        kafkaSender.send("hello kafka");
+//        return "发送成功";
+//    }
 }
