@@ -11,6 +11,15 @@ spring:
     password:
     port: 6379
 
+   #redis存储session
+  session:
+    store-type: redis
+    servlet:
+      session:
+        timeout: 3600
+    redis:
+      namespace: spring-session
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -18,3 +27,4 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+

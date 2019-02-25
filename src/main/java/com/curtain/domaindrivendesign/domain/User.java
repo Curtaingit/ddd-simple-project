@@ -33,8 +33,6 @@ import java.util.stream.Collectors;
 @Entity
 @SchemaDocumentation("用户")
 public class User extends BosEntity implements UserDetails {
-
-
     @SchemaDocumentation("姓名")
     private String nickname;
 

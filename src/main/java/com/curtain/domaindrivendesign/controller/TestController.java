@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Curtain
  * @date 2018/12/18 15:49
@@ -59,6 +62,7 @@ public class TestController {
     @RequestMapping("/query")
     @Cacheable(value="users", key="#id")
     public Object query(@RequestParam("id") String id) {
+        get("2");
         return secKillService.queryMap(id);
     }
 
@@ -67,6 +71,27 @@ public class TestController {
         secKillService.orderProductMockDiffUser(id);
     }
 
+
+
+    private final Map<String, String> map = new HashMap<>();
+
+    {
+        map.put("1", "1");
+        map.put("2", "2");
+        map.put("3", "3");
+        map.put("4", "4");
+        map.put("5", "5");
+    }
+
+    public String values(String key) {
+        return map.get(key);
+    }
+
+    @Cacheable(value="test", key="#key")
+    public void get(String key){
+        String values = values(key);
+        System.out.println(values);
+    }
 
 //    @RequestMapping("/send")
 //    public Object send() {

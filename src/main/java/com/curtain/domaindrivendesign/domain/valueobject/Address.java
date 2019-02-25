@@ -1,6 +1,7 @@
 package com.curtain.domaindrivendesign.domain.valueobject;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 /**
  * @author Curtain
@@ -8,7 +9,7 @@ import javax.persistence.Embeddable;
  */
 
 @Embeddable
-public class Address {
+public class Address implements Serializable{
 
     /** 城市 */
     private String city;

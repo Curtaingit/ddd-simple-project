@@ -1,12 +1,13 @@
 package com.curtain.domaindrivendesign.util;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.checkerframework.checker.units.qual.A;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+//import org.apache.kafka.clients.consumer.ConsumerRecord;
+//import org.checkerframework.checker.units.qual.A;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.kafka.annotation.KafkaListener;
+//import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 import java.util.UUID;
